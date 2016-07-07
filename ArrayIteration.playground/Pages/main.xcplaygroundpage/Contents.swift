@@ -14,10 +14,7 @@
  ### 1. You're building an app and want to store all of the ingredients added to a cart. How would you represent this cart in code? The ingredients are "Chips", "Salsa", "Guacamole", "Red wine". Explicitly mark the content of the cart as strings.
  */
 // write your code here
-
-
-
-
+let ingredients = ["Chips", "Salsa", "Guacamole", "Red wine"]
 
 
 /*: question2
@@ -25,7 +22,7 @@
  */
 // write your code here
 
-
+let numbers : [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 
@@ -35,7 +32,9 @@
  ### 3. Take the list of numbers you created in question 2 and print their values in the most efficient way possible.
  */
 // write your code here
-
+for number in numbers {
+    print("\(number)")
+}
 
 
 
@@ -47,7 +46,9 @@
  */
 // write your code here
 
-
+for ingredient in ingredients {
+    print("\(ingredient)")
+}
 
 
 
@@ -57,9 +58,12 @@
  ### 5. Take the list of shopping cart items you created in question 1 and print their values by passing each item in list to a function to be printed.
  */
 // write your code here
-
-
-
+func printIngredients(list : [String]) {
+    for items in list{
+        print("\(items)")
+    }
+}
+printIngredients(ingredients)
 
 
 
@@ -69,17 +73,34 @@
  */
 // write your code here
 
-
-
-
+func goodMorningGreeting(namesArray : [String]) {
+    
+    for name in namesArray {
+        if name == "Michael" {
+            print ("Top of the morning Michael!")
+        } else {
+            print ("Good morning \(name)")
+        }
+    }
+}
 
 
 /*: question7
  ### 7. Create a function that takes an array of Ints (40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49) and returns an array of Ints. This function should look through the array of Ints and create a new array of Ints that only contain integers less than 50.
  */
 // write your code here
+func filterForFifty(arrayOfInts : [Int]) -> [Int] {
+    var newArray : [Int] = []
+    for arrayOfInt in arrayOfInts {
+        if arrayOfInt < 50 {
+            newArray.append(arrayOfInt)
+            print("There is a number less than 50.")
+        }
+    }
+    return newArray
+}
 
-
+filterForFifty([40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49])
 
 
 
